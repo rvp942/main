@@ -1,0 +1,39 @@
+/* CSS File (style.css) */
+
+/* Basic Reset */
+body {
+    margin: 0; /* Remove default margin */
+    font-family: Arial, sans-serif; /* Set the font */
+    display: flex; /* Flexbox layout to center content */
+    justify-content: center; /* Horizontally center content */
+    align-items: center; /* Vertically center content */
+    height: 100vh; /* Full viewport height */
+    transition: background-color 0.5s ease; /* Smooth transition for background color change */
+}
+
+/* Container Styling */
+.container {
+    text-align: center; /* Center text */
+    padding: 20px; /* Add space inside the container */
+    border: 2px solid #ccc; /* Light gray border */
+    border-radius: 10px; /* Rounded corners */
+    background: white; /* White background inside the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for a lifted effect */
+}
+
+/* Button Styling */
+button {
+    padding: 10px 20px; /* Space inside the button */
+    font-size: 16px; /* Font size of the button text */
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text color */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Rounded button corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth color transition on hover */
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #0056b3; /* Darker blue when hovered */
+}

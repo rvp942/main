@@ -1,45 +1,55 @@
-import tkinter as tk
+# Calculator Application
 
-class CalculatorApp:
-    def __init__(self, root):
-        self.root = root
-        self.root.title("Calculator")
+This is a simple calculator application built using Python and the Tkinter library. It provides basic arithmetic operations such as addition, subtraction, multiplication, and division, as well as a clear button to reset the input field.
 
-        # Input field
-        self.entry = tk.Entry(root, width=20, font=("Arial", 18), borderwidth=5, relief="ridge", justify="right")
-        self.entry.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
+## Features
+- Basic arithmetic operations: `+`, `-`, `*`, `/`
+- Clear button (`C`) to reset the input field
+- Equal button (`=`) to evaluate the entered expression
+- User-friendly graphical interface
 
-        # Button layout
-        buttons = [
-            ('7', 1, 0), ('8', 1, 1), ('9', 1, 2), ('/', 1, 3),
-            ('4', 2, 0), ('5', 2, 1), ('6', 2, 2), ('*', 2, 3),
-            ('1', 3, 0), ('2', 3, 1), ('3', 3, 2), ('-', 3, 3),
-            ('C', 4, 0), ('0', 4, 1), ('=', 4, 2), ('+', 4, 3),
-        ]
+## Prerequisites
+- Python 3.x installed on your system
 
-        # Add buttons to the UI
-        for (text, row, col) in buttons:
-            button = tk.Button(root, text=text, font=("Arial", 18), width=5, height=2,
-                               command=lambda t=text: self.on_button_click(t))
-            button.grid(row=row, column=col, padx=5, pady=5)
+## How to Run the Application
+1. Clone or download this repository.
+2. Ensure you have Python 3.x installed.
+3. Run the Python script `calculator.py` using the following command:
+   ```bash
+   python calculator.py
+   ```
+4. The calculator window will open, and you can start using the application.
 
-    def on_button_click(self, char):
-        if char == "C":
-            self.entry.delete(0, tk.END)  # Clear the entry field
-        elif char == "=":
-            try:
-                expression = self.entry.get()
-                result = eval(expression)  # Evaluate the expression
-                self.entry.delete(0, tk.END)
-                self.entry.insert(tk.END, str(result))
-            except Exception:
-                self.entry.delete(0, tk.END)
-                self.entry.insert(tk.END, "Error")
-        else:
-            self.entry.insert(tk.END, char)  # Add text to the entry field
+## Code Structure
+- **Input Field**: The `tk.Entry` widget is used for entering numbers and operations.
+- **Buttons**: Each button is created dynamically using a loop and tied to a specific operation using the `on_button_click` method.
+- **Event Handling**: The `on_button_click` method processes button clicks, evaluates expressions, and displays results.
 
+## Usage
+1. Enter a mathematical expression using the buttons.
+2. Press `=` to evaluate the expression.
+3. Press `C` to clear the input field.
 
-if __name__ == "__main__":
-    root = tk.Tk()
-    app = CalculatorApp(root)
-    root.mainloop()
+## Example
+- Input: `12 + 8`
+- Press `=`
+- Output: `20`
+
+## Screenshots
+(No screenshots are provided in this README. You can run the application to see its interface.)
+
+## Known Issues
+- The application uses Python's built-in `eval()` function, which may pose security risks if untrusted input is provided.
+- Does not support advanced operations like square root, power, or trigonometric functions.
+
+## Future Enhancements
+- Add support for advanced operations like square root, power, and percentage.
+- Improve error handling for invalid inputs.
+
+## License
+This project is licensed under the MIT License. Feel free to use, modify, and distribute it.
+
+---
+
+### Author
+Created by [Your Name]. Feel free to contribute or suggest improvements!
